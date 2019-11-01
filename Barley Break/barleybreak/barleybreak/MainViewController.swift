@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var modePanel: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var designChooseButton: UIButton!
     
     private var screenWidth: CGFloat = 0
     private var screenHeight: CGFloat = 0
@@ -34,6 +35,11 @@ class MainViewController: UIViewController {
         playButton.center = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
         playButton.setBackgroundImage(UIImage(named: "button_play.png"), for: .normal)
         playButton.setBackgroundImage(UIImage(named: "button_play_active.png"), for: .highlighted)
+        
+        designChooseButton.frame = CGRect(x: 0, y: 0, width: screenWidth * 0.2, height: screenWidth * 0.2)
+        designChooseButton.setBackgroundImage(UIImage(named: "design1.png"), for: .normal)
+        designChooseButton.frame.origin.x = screenWidth - designChooseButton.frame.width - 15
+        designChooseButton.frame.origin.y = UIApplication.shared.statusBarFrame.height + 10
         
         titleLabel.frame = CGRect(x: 0, y: 0, width: screenWidth * 0.7, height: playButton.frame.size.height / 2)
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -121,6 +127,11 @@ class MainViewController: UIViewController {
     private func startGame() {
         let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
         self.navigationController?.pushViewController(gameVC!, animated: true)
+    }
+    
+    @IBAction func openChooseDesign(_ sender: Any) {
+       let chooseDesignVC = self.storyboard?.instantiateViewController(withIdentifier: "ChooseDesignViewController")
+       self.navigationController?.pushViewController(chooseDesignVC!, animated: true)
     }
     
 

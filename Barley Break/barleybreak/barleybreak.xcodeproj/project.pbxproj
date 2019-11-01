@@ -12,6 +12,15 @@
 		31147DD0236ABEC400ACB6E7 /* Gilroy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31147DCF236ABEC400ACB6E7 /* Gilroy.ttf */; };
 		31147DD8236AD72700ACB6E7 /* button_play_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147DD7236AD72700ACB6E7 /* button_play_active.png */; };
 		31147DDA236AEFA100ACB6E7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31147DD9236AEFA100ACB6E7 /* Utils.swift */; };
+		31147E7C236C8D2E00ACB6E7 /* ChooseDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31147E7B236C8D2E00ACB6E7 /* ChooseDesignViewController.swift */; };
+		31147E7E236C9C2000ACB6E7 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31147E7D236C9C2000ACB6E7 /* DataViewController.swift */; };
+		31147E80236CA5EA00ACB6E7 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31147E7F236CA5EA00ACB6E7 /* CustomPageViewController.swift */; };
+		31147EA2236CAD6200ACB6E7 /* design6.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147E9C236CAD6200ACB6E7 /* design6.png */; };
+		31147EA3236CAD6200ACB6E7 /* design5.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147E9D236CAD6200ACB6E7 /* design5.png */; };
+		31147EA4236CAD6200ACB6E7 /* design4.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147E9E236CAD6200ACB6E7 /* design4.png */; };
+		31147EA5236CAD6200ACB6E7 /* design1.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147E9F236CAD6200ACB6E7 /* design1.png */; };
+		31147EA6236CAD6200ACB6E7 /* design3.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147EA0236CAD6200ACB6E7 /* design3.png */; };
+		31147EA7236CAD6200ACB6E7 /* design2.png in Resources */ = {isa = PBXBuildFile; fileRef = 31147EA1236CAD6200ACB6E7 /* design2.png */; };
 		3139109E22FE000E00F6B2C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139109D22FE000E00F6B2C4 /* AppDelegate.swift */; };
 		313910A022FE000E00F6B2C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139109F22FE000E00F6B2C4 /* ViewController.swift */; };
 		313910A322FE000E00F6B2C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 313910A122FE000E00F6B2C4 /* Main.storyboard */; };
@@ -68,6 +77,15 @@
 		31147DCF236ABEC400ACB6E7 /* Gilroy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gilroy.ttf; sourceTree = "<group>"; };
 		31147DD7236AD72700ACB6E7 /* button_play_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_play_active.png; sourceTree = "<group>"; };
 		31147DD9236AEFA100ACB6E7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		31147E7B236C8D2E00ACB6E7 /* ChooseDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDesignViewController.swift; sourceTree = "<group>"; };
+		31147E7D236C9C2000ACB6E7 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		31147E7F236CA5EA00ACB6E7 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		31147E9C236CAD6200ACB6E7 /* design6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design6.png; sourceTree = "<group>"; };
+		31147E9D236CAD6200ACB6E7 /* design5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design5.png; sourceTree = "<group>"; };
+		31147E9E236CAD6200ACB6E7 /* design4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design4.png; sourceTree = "<group>"; };
+		31147E9F236CAD6200ACB6E7 /* design1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design1.png; sourceTree = "<group>"; };
+		31147EA0236CAD6200ACB6E7 /* design3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design3.png; sourceTree = "<group>"; };
+		31147EA1236CAD6200ACB6E7 /* design2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design2.png; sourceTree = "<group>"; };
 		3139109A22FE000E00F6B2C4 /* barleybreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barleybreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3139109D22FE000E00F6B2C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3139109F22FE000E00F6B2C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +158,19 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		31147E9B236CAD6200ACB6E7 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				31147E9C236CAD6200ACB6E7 /* design6.png */,
+				31147E9D236CAD6200ACB6E7 /* design5.png */,
+				31147E9E236CAD6200ACB6E7 /* design4.png */,
+				31147E9F236CAD6200ACB6E7 /* design1.png */,
+				31147EA0236CAD6200ACB6E7 /* design3.png */,
+				31147EA1236CAD6200ACB6E7 /* design2.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		3139109122FE000E00F6B2C4 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +190,7 @@
 		3139109C22FE000E00F6B2C4 /* barleybreak */ = {
 			isa = PBXGroup;
 			children = (
+				31147E9B236CAD6200ACB6E7 /* icons */,
 				31147DD7236AD72700ACB6E7 /* button_play_active.png */,
 				31147DC8236AB8EC00ACB6E7 /* fonts */,
 				31147DC6236AB83800ACB6E7 /* back_icon.png */,
@@ -176,6 +208,9 @@
 				31EAB0102301FE3D00742496 /* TouchDownRecognizer.swift */,
 				31EAB0B12304865200742496 /* MainViewController.swift */,
 				31147DD9236AEFA100ACB6E7 /* Utils.swift */,
+				31147E7B236C8D2E00ACB6E7 /* ChooseDesignViewController.swift */,
+				31147E7D236C9C2000ACB6E7 /* DataViewController.swift */,
+				31147E7F236CA5EA00ACB6E7 /* CustomPageViewController.swift */,
 			);
 			path = barleybreak;
 			sourceTree = "<group>";
@@ -301,6 +336,7 @@
 				31EAB08B2302109900742496 /* image10.png in Resources */,
 				31EAB0982302109900742496 /* image24.png in Resources */,
 				31EAB0A02302109900742496 /* image26.png in Resources */,
+				31147EA6236CAD6200ACB6E7 /* design3.png in Resources */,
 				31EAB0AC2302109900742496 /* image8.png in Resources */,
 				31EAB0932302109900742496 /* image13.png in Resources */,
 				31EAB0A22302109900742496 /* image3.png in Resources */,
@@ -310,11 +346,14 @@
 				31EAB0AB2302109900742496 /* image14.png in Resources */,
 				31EAB09E2302109900742496 /* image28.png in Resources */,
 				31EAB03F23020AE400742496 /* LaunchScreen.storyboard in Resources */,
+				31147EA4236CAD6200ACB6E7 /* design4.png in Resources */,
 				31EAB04023020AE400742496 /* Main.storyboard in Resources */,
 				31147DD8236AD72700ACB6E7 /* button_play_active.png in Resources */,
 				31EAB0AA2302109900742496 /* image22.png in Resources */,
 				31EAB09B2302109900742496 /* image4.png in Resources */,
+				31147EA7236CAD6200ACB6E7 /* design2.png in Resources */,
 				31EAB0912302109900742496 /* image25.png in Resources */,
+				31147EA2236CAD6200ACB6E7 /* design6.png in Resources */,
 				31EAB0AD2302109900742496 /* image0.png in Resources */,
 				31EAB08F2302109900742496 /* image16.png in Resources */,
 				31EAB08C2302109900742496 /* image7.png in Resources */,
@@ -322,6 +361,7 @@
 				31EAB0902302109900742496 /* image32.png in Resources */,
 				31EAB0A32302109900742496 /* image5.png in Resources */,
 				31EAB0A12302109900742496 /* image34.png in Resources */,
+				31147EA3236CAD6200ACB6E7 /* design5.png in Resources */,
 				31EAB0992302109900742496 /* image29.png in Resources */,
 				313910A322FE000E00F6B2C4 /* Main.storyboard in Resources */,
 				31147DC7236AB83800ACB6E7 /* back_icon.png in Resources */,
@@ -332,6 +372,7 @@
 				31EAB09D2302109900742496 /* image20.png in Resources */,
 				31EAB0A92302109900742496 /* image30.png in Resources */,
 				31EAB0942302109900742496 /* image23.png in Resources */,
+				31147EA5236CAD6200ACB6E7 /* design1.png in Resources */,
 				31EAB0B02304854F00742496 /* button_play.png in Resources */,
 				31EAB09A2302109900742496 /* image17.png in Resources */,
 				31147DD0236ABEC400ACB6E7 /* Gilroy.ttf in Resources */,
@@ -348,6 +389,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31147E80236CA5EA00ACB6E7 /* CustomPageViewController.swift in Sources */,
+				31147E7C236C8D2E00ACB6E7 /* ChooseDesignViewController.swift in Sources */,
+				31147E7E236C9C2000ACB6E7 /* DataViewController.swift in Sources */,
 				31147DDA236AEFA100ACB6E7 /* Utils.swift in Sources */,
 				313910A022FE000E00F6B2C4 /* ViewController.swift in Sources */,
 				31EAB0112301FE3D00742496 /* TouchDownRecognizer.swift in Sources */,

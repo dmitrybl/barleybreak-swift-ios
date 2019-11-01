@@ -92,16 +92,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lU-Pc-QOM">
+                                <rect key="frame" x="335" y="108" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="openChooseDesign:" destination="dbA-WZ-qek" eventType="touchUpInside" id="9qS-mV-ibY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.28235294117647058" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="zOp-cI-UKp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Главное меню" id="MiS-eX-GSs"/>
                     <connections>
+                        <outlet property="designChooseButton" destination="0lU-Pc-QOM" id="9Xc-bq-jnu"/>
                         <outlet property="modePanel" destination="ny9-Zj-wXv" id="IG7-SC-m1K"/>
                         <outlet property="playButton" destination="ogj-8n-bTQ" id="txr-Jt-BBh"/>
                         <outlet property="titleLabel" destination="ypN-zm-r9S" id="r3N-Tu-JNA"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="game" id="tub-SV-AdA"/>
+                        <segue destination="3Rp-Su-ydW" kind="show" id="kx7-CF-oxO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jw-Ay-bG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,8 +135,77 @@
             </objects>
             <point key="canvasLocation" x="689.85507246376812" y="101.78571428571428"/>
         </scene>
+        <!--Choose Design View Controller-->
+        <scene sceneID="HE4-ZY-MkP">
+            <objects>
+                <viewController storyboardIdentifier="ChooseDesignViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Rp-Su-ydW" customClass="ChooseDesignViewController" customModule="barleybreak" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FxV-eE-0hg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrD-VI-oSE">
+                                <rect key="frame" x="20" y="104" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_icon.png"/>
+                                <connections>
+                                    <action selector="onBackButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SOP-p0-bJa"/>
+                                    <action selector="onBackButtonClick:" destination="3Rp-Su-ydW" eventType="touchUpInside" id="cTf-Ph-zd6"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-hO-Ymt">
+                                <rect key="frame" x="0.0" y="171" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.28235294119999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.28235294117647058" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="C5W-rt-j6d"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2P6-Hp-60X"/>
+                    <connections>
+                        <outlet property="backButton" destination="PrD-VI-oSE" id="Pxq-0o-2xc"/>
+                        <outlet property="contentView" destination="WGb-hO-Ymt" id="pkp-Vy-ykh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKL-HF-dsm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.0000000000002" y="777.45535714285711"/>
+        </scene>
+        <!--Data View Controller-->
+        <scene sceneID="FDf-RH-TRe">
+            <objects>
+                <viewController storyboardIdentifier="DataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9gf-P8-OJT" customClass="DataViewController" customModule="barleybreak" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F9w-Mt-MhE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="design1.png" translatesAutoresizingMaskIntoConstraints="NO" id="pWj-I6-4rC">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.28235294119999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="JvJ-ye-fbc"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="pWj-I6-4rC" id="s5m-Aw-nit"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQQ-1E-4LQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2417.3913043478265" y="794.86607142857144"/>
+        </scene>
+        <!--Custom Page View Controller-->
+        <scene sceneID="abd-i9-YQz">
+            <objects>
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="pTy-Dr-00k" customClass="CustomPageViewController" customModule="barleybreak" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5r-ZX-q1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3224" y="802"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back_icon.png" width="36" height="36"/>
+        <image name="design1.png" width="252.5" height="247.5"/>
     </resources>
 </document>
