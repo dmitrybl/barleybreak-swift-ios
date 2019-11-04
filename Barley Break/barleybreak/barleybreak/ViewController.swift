@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     
     private var progress = ""
     
+    private var currentDesign = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         numbersInRow = UserDefaults.standard.integer(forKey: "mode")
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         size = "\(numbersInRow)x\(numbersInRow)"
         highScore = Utils.getHighScore(size: size)
         progress = Utils.getProgress(size: size)
+        currentDesign = Utils.getCurrentDesign()
         if progress.isEmpty {
             numSteps = 0
         } else {
@@ -105,28 +108,29 @@ class ViewController: UIViewController {
        
         for i in 0...number {
             
-            let image = UIImage(named: "image\(i).png")
+            let image = UIImage(named: "\(currentDesign)image\(i).png")
             let imageView = UIImageView(image: image)
-            imageView.frame.size = CGSize(width: elemSize, height: elemSize)
-            gameFieldView.addSubview(imageView)
+            imageView.frame = CGRect(x: 0, y: 0, width: elemSize, height: elemSize)
             objectsImages.append(imageView)
             
+            let emptyImage = UIImage(named: "\(currentDesign)image0.png")
+            let emptyImageView = UIImageView(image: emptyImage)
+            emptyImageView.frame = CGRect(x: 0, y: 0, width: elemSize, height: elemSize)
+            emptyImageView.frame.origin.x = elemSize * CGFloat((i % numbersInRow))
+            emptyImageView.frame.origin.y = elemSize * CGFloat((i / numbersInRow))
+            gameFieldView.addSubview(emptyImageView)
+            
         }
         
-        let touchGestureRecognizer = SingleTouchDownGestureRecognizer(target: self,
-                        action: #selector(onClick(sender:)))
+        for i in 0..<number {
+            objectsImages[i + 1].frame.origin.x = elemSize * CGFloat((i % numbersInRow))
+            objectsImages[i + 1].frame.origin.y = elemSize * CGFloat((i / numbersInRow))
+            gameFieldView.addSubview(objectsImages[i + 1])
+        }
+        
+        let touchGestureRecognizer = SingleTouchDownGestureRecognizer(target: self, action: #selector(onClick(sender:)))
         
         gameFieldView.addGestureRecognizer(touchGestureRecognizer)
-        
-        
-        for i in 1..<objectsImages.count {
-            
-            objectsImages[i].frame.origin.x = gameFieldView.bounds.origin.x
-                + elemSize * CGFloat(((i - 1) % numbersInRow))
-            objectsImages[i].frame.origin.y = gameFieldView.bounds.origin.y
-                + elemSize * CGFloat(((i - 1) / numbersInRow))
-            
-        }
  
     }
     

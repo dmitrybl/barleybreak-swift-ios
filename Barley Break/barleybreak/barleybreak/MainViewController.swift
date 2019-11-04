@@ -78,6 +78,8 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        let currentDesign = Utils.getCurrentDesign()
+        designChooseButton.setBackgroundImage(UIImage(named: currentDesign), for: .normal)
     }
     
     private func setMode(mode: Int) {

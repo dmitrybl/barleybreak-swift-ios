@@ -12,7 +12,7 @@ class DataViewController: UIViewController {
     
     
     @IBOutlet weak var imageView: UIImageView!
-    var image: UIImage?
+    var design: Design?
     var index: Int?
     
     private var screenWidth: CGFloat = 0
@@ -27,8 +27,23 @@ class DataViewController: UIViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: screenWidth * 0.6, height: screenWidth * 0.6)
         imageView.center = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
         imageView.frame.origin.y -= (UIApplication.shared.statusBarFrame.height + screenWidth * 0.1 + 30)
-        imageView.image = image
+        imageView.image = design?.image
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                               action: #selector(onClick(sender:)))
+        
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        imageView.isUserInteractionEnabled = true
     }
+    
+    @objc func onClick(sender: UITapGestureRecognizer) {
+        Utils.setCurrentDesign(value: design?.name ?? Utils.designNames[0])
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
     
 
 }

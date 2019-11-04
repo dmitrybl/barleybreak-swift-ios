@@ -11,12 +11,12 @@ import UIKit
 class ChooseDesignViewController: UIViewController {
     
     let dataSource = [
-        UIImage(named: "design1.png"),
-        UIImage(named: "design2.png"),
-        UIImage(named: "design3.png"),
-        UIImage(named: "design4.png"),
-        UIImage(named: "design5.png"),
-        UIImage(named: "design6.png")
+        Design(image: UIImage(named: "design1.png"), name: Utils.designNames[0]),
+        Design(image: UIImage(named: "design2.png"), name: Utils.designNames[1]),
+        Design(image: UIImage(named: "design3.png"), name: Utils.designNames[2]),
+        Design(image: UIImage(named: "design4.png"), name: Utils.designNames[3]),
+        Design(image: UIImage(named: "design5.png"), name: Utils.designNames[4]),
+        Design(image: UIImage(named: "design6.png"), name: Utils.designNames[5])
     ]
     
     var currentViewControllerIndex = 0
@@ -45,6 +45,30 @@ class ChooseDesignViewController: UIViewController {
         
         contentView.frame.origin.x = 0
         contentView.frame.origin.y = contentViewYPos
+        
+        let currentDesign = Utils.getCurrentDesign()
+        switch currentDesign {
+            case Utils.designNames[0]:
+                currentViewControllerIndex = 0
+                break
+            case Utils.designNames[1]:
+                currentViewControllerIndex = 1
+                break
+            case Utils.designNames[2]:
+                currentViewControllerIndex = 2
+                break
+            case Utils.designNames[3]:
+                currentViewControllerIndex = 3
+                break
+            case Utils.designNames[4]:
+                currentViewControllerIndex = 4
+                break
+            case Utils.designNames[5]:
+                currentViewControllerIndex = 5
+                break
+            default:
+                currentViewControllerIndex = 0
+        }
         
         configurePageViewController()
         
@@ -88,7 +112,7 @@ class ChooseDesignViewController: UIViewController {
         }
         
         dataViewController.index = index
-        dataViewController.image = dataSource[index]
+        dataViewController.design = dataSource[index]
         
         return dataViewController
     }

@@ -15,6 +15,10 @@ class Utils {
     private static let HIGHSCORE = "highScore"
     private static let PROGRESS = "progress"
     private static let SAVED_SCORE = "savedScore"
+    private static let CURRENT_DESIGN = "currentDesign"
+    
+    static let designNames: [String] = ["design1", "design2", "design3",
+                                        "design4", "design5", "design6"]
     
     static func initializeUserDefault() {
         UserDefaults.standard.set(true, forKey: EXISTS)
@@ -31,6 +35,7 @@ class Utils {
         UserDefaults.standard.set(0, forKey: "savedScore4x4")
         UserDefaults.standard.set(0, forKey: "savedScore5x5")
         UserDefaults.standard.set(0, forKey: "savedScore6x6")
+        UserDefaults.standard.set(designNames[0], forKey: CURRENT_DESIGN)
     }
     
     static func UserDefaultsExists() -> Bool {
@@ -69,4 +74,12 @@ class Utils {
         return UserDefaults.standard.integer(forKey: "\(SAVED_SCORE)\(size)")
     }
     
+    static func setCurrentDesign(value: String) {
+        UserDefaults.standard.set(value, forKey: CURRENT_DESIGN)
+    }
+    
+    static func getCurrentDesign() -> String {
+        return UserDefaults.standard.string(forKey: CURRENT_DESIGN) ?? designNames[0]
+    }
+ 
 }
