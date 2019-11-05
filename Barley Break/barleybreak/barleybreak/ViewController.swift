@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
+    
+    var bannerView: GADBannerView!
+    var interstitial: GADInterstitial!
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var gameFieldView: UIView!
@@ -38,6 +42,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-7476185376948341/7928952521"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7476185376948341/8148444370")
+        let request = GADRequest()
+        interstitial.load(request)
+        
         numbersInRow = UserDefaults.standard.integer(forKey: "mode")
         number = numbersInRow * numbersInRow - 1
         size = "\(numbersInRow)x\(numbersInRow)"
@@ -371,6 +386,9 @@ class ViewController: UIViewController {
     }
     
     private func newGame() {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
         numSteps = 0
         progress = ""
         resetProgress()
@@ -389,6 +407,7 @@ class ViewController: UIViewController {
         }))
         
         self.present(alert, animated: true)
+        
     }
     
     private func saveProgress() {
@@ -404,6 +423,27 @@ class ViewController: UIViewController {
         Utils.setProgress(size: size, value: "")
         Utils.setSavedScore(size: size, value: 0)
     }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
     
 }
 

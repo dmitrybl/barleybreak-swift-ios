@@ -38,6 +38,7 @@ class DataViewController: UIViewController {
     
     @objc func onClick(sender: UITapGestureRecognizer) {
         Utils.setCurrentDesign(value: design?.name ?? Utils.designNames[0])
+        (self.parent as! CustomPageViewController).onClick()
         self.navigationController?.popViewController(animated: true)
     }
     

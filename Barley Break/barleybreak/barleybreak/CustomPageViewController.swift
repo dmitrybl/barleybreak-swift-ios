@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CustomPageViewController: UIPageViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func onClick() {
+        (self.parent as! ChooseDesignViewController).showAdvertisement()
     }
 
 }

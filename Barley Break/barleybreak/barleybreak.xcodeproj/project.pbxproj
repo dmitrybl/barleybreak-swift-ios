@@ -244,15 +244,16 @@
 		313910A522FE001200F6B2C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 313910A422FE001200F6B2C4 /* Assets.xcassets */; };
 		313910A822FE001200F6B2C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 313910A622FE001200F6B2C4 /* LaunchScreen.storyboard */; };
 		31EAB0112301FE3D00742496 /* TouchDownRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EAB0102301FE3D00742496 /* TouchDownRecognizer.swift */; };
-		31EAB03E23020AE400742496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31EAB01223020AE400742496 /* Assets.xcassets */; };
 		31EAB03F23020AE400742496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EAB01423020AE400742496 /* LaunchScreen.storyboard */; };
 		31EAB04023020AE400742496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EAB01623020AE400742496 /* Main.storyboard */; };
 		31EAB04123020AE400742496 /* puzzle15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31EAB01823020AE400742496 /* puzzle15.jpg */; };
 		31EAB0B02304854F00742496 /* button_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 31EAB0AF2304854F00742496 /* button_play.png */; };
 		31EAB0B22304865200742496 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EAB0B12304865200742496 /* MainViewController.swift */; };
+		BB3ED8352658D81C5FDF6BB0 /* libPods-barleybreak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1245699B983CE62C1BBEBF2E /* libPods-barleybreak.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1245699B983CE62C1BBEBF2E /* libPods-barleybreak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-barleybreak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31147DC6236AB83800ACB6E7 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		31147DCB236ABA7E00ACB6E7 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		31147DCF236ABEC400ACB6E7 /* Gilroy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gilroy.ttf; sourceTree = "<group>"; };
@@ -498,6 +499,8 @@
 		31EAB01823020AE400742496 /* puzzle15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puzzle15.jpg; sourceTree = "<group>"; };
 		31EAB0AF2304854F00742496 /* button_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_play.png; sourceTree = "<group>"; };
 		31EAB0B12304865200742496 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		68B5B8D2FEECA42D05AA386D /* Pods-barleybreak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barleybreak.release.xcconfig"; path = "Target Support Files/Pods-barleybreak/Pods-barleybreak.release.xcconfig"; sourceTree = "<group>"; };
+		72E0D12DE5040CDAA391CC86 /* Pods-barleybreak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barleybreak.debug.xcconfig"; path = "Target Support Files/Pods-barleybreak/Pods-barleybreak.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,12 +508,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3ED8352658D81C5FDF6BB0 /* libPods-barleybreak.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C99A5018D8FAE05F55C94C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1245699B983CE62C1BBEBF2E /* libPods-barleybreak.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		31147DC8236AB8EC00ACB6E7 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +773,8 @@
 			children = (
 				3139109C22FE000E00F6B2C4 /* barleybreak */,
 				3139109B22FE000E00F6B2C4 /* Products */,
+				881AB566F7D8809F5A2540A9 /* Pods */,
+				2C99A5018D8FAE05F55C94C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -810,6 +824,15 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		881AB566F7D8809F5A2540A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72E0D12DE5040CDAA391CC86 /* Pods-barleybreak.debug.xcconfig */,
+				68B5B8D2FEECA42D05AA386D /* Pods-barleybreak.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -817,6 +840,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 313910AC22FE001200F6B2C4 /* Build configuration list for PBXNativeTarget "barleybreak" */;
 			buildPhases = (
+				25AAC1497C6958E187E5129E /* [CP] Check Pods Manifest.lock */,
 				3139109622FE000E00F6B2C4 /* Sources */,
 				3139109722FE000E00F6B2C4 /* Frameworks */,
 				3139109822FE000E00F6B2C4 /* Resources */,
@@ -837,7 +861,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Dmitry Belyaev";
 				TargetAttributes = {
 					3139109922FE000E00F6B2C4 = {
@@ -931,7 +955,6 @@
 				31148071237026F700ACB6E7 /* design4image25.png in Resources */,
 				31147EA6236CAD6200ACB6E7 /* design3.png in Resources */,
 				31147FDB237026F600ACB6E7 /* design2image30.png in Resources */,
-				31EAB03E23020AE400742496 /* Assets.xcassets in Resources */,
 				31147FE1237026F600ACB6E7 /* design5image30.png in Resources */,
 				31148003237026F600ACB6E7 /* design3image29.png in Resources */,
 				31147FD3237026F600ACB6E7 /* design2image25.png in Resources */,
@@ -1107,6 +1130,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25AAC1497C6958E187E5129E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-barleybreak-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3139109622FE000E00F6B2C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1280,6 +1328,7 @@
 		};
 		313910AD22FE001200F6B2C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72E0D12DE5040CDAA391CC86 /* Pods-barleybreak.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1298,6 +1347,7 @@
 		};
 		313910AE22FE001200F6B2C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68B5B8D2FEECA42D05AA386D /* Pods-barleybreak.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
