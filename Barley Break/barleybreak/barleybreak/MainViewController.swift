@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.font = UIFont(name: "Gilroy", size: titleLabel.frame.size.height)
         titleLabel.center.x = screenWidth / 2
-        titleLabel.text = "Пятнашки"
+        titleLabel.text = NSLocalizedString("game_title", comment: "")
         titleLabel.textAlignment = .center
         titleLabel.frame.origin.y = playButton.frame.origin.y - titleLabel.frame.size.height - 30
         
@@ -119,12 +119,12 @@ class MainViewController: UIViewController {
             startGame()
         } else {
             
-            let alert = UIAlertController(title: "Продолжить игру", message: "Хотите продолжить последнюю сохраненную игру", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { action in
+            let alert = UIAlertController(title: NSLocalizedString("continue_game_dialog_title", comment: ""), message: NSLocalizedString("continue_game_dialog_message", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .default, handler: { action in
                 self.startGame()
             }))
             
-            alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: { action in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("no", comment: ""), style: .cancel, handler: { action in
                 Utils.setProgress(size: size, value: "")
                 self.startGame()
             }))

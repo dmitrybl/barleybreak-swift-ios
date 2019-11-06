@@ -105,12 +105,12 @@ class ViewController: UIViewController {
         bestLabel.frame.origin.x = screenWidth - bestLabel.frame.size.width - 10
         bestLabel.frame.origin.y = backButton.frame.origin.y
         bestLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        bestLabel.textAlignment = .left
+        bestLabel.textAlignment = .right
         
         if highScore == 0 {
-            bestLabel.text = "Лучший: -"
+            bestLabel.text = "\(NSLocalizedString("best", comment: "")) -"
         } else {
-            bestLabel.text = "Лучший: \(highScore)"
+            bestLabel.text = "\(NSLocalizedString("best", comment: "")) \(highScore)"
         }
         
         gameFieldView.frame = CGRect(x: 0, y: 0, width: screenWidth * 0.9, height: screenWidth * 0.9)
@@ -268,7 +268,7 @@ class ViewController: UIViewController {
                 if (checkWin()) {
                     if (numSteps < highScore || highScore == 0) {
                         highScore = numSteps
-                        bestLabel.text = "Лучший: \(highScore)"
+                        bestLabel.text = "\(NSLocalizedString("best", comment: "")) \(highScore)"
                         Utils.setHighScore(size: size, value: highScore)
                     }
                     resetProgress()
@@ -292,7 +292,7 @@ class ViewController: UIViewController {
                 if (checkWin()) {
                     if (numSteps < highScore || highScore == 0) {
                         highScore = numSteps
-                        bestLabel.text = "Лучший: \(highScore)"
+                        bestLabel.text = "\(NSLocalizedString("best", comment: "")) \(highScore)"
                         Utils.setHighScore(size: size, value: highScore)
                     }
                     resetProgress()
@@ -318,7 +318,7 @@ class ViewController: UIViewController {
                 if (checkWin()) {
                     if (numSteps < highScore || highScore == 0) {
                         highScore = numSteps
-                        bestLabel.text = "Лучший: \(highScore)"
+                        bestLabel.text = "\(NSLocalizedString("best", comment: "")) \(highScore)"
                         Utils.setHighScore(size: size, value: highScore)
                     }
                     resetProgress()
@@ -342,7 +342,7 @@ class ViewController: UIViewController {
                 if (checkWin()) {
                     if (numSteps < highScore || highScore == 0) {
                         highScore = numSteps
-                        bestLabel.text = "Лучший: \(highScore)"
+                        bestLabel.text = "\(NSLocalizedString("best", comment: "")) \(highScore)"
                         Utils.setHighScore(size: size, value: highScore)
                     }
                     resetProgress()
@@ -397,12 +397,12 @@ class ViewController: UIViewController {
     }
     
     private func showGameOverDialog() {
-        let alert = UIAlertController(title: "Игра окончена", message: "Вы собрали пятнашки за \(numSteps) ходов. Начать игру сначала?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { action in
+        let alert = UIAlertController(title: NSLocalizedString("game_over_dialog_title", comment: ""), message: "\(NSLocalizedString("game_over_dialog_message1", comment: "")) \(numSteps) \(NSLocalizedString("game_over_dialog_message2", comment: ""))", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .default, handler: { action in
             self.newGame()
         }))
         
-        alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: { action in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("no", comment: ""), style: .cancel, handler: { action in
             self.navigationController?.popViewController(animated: true)
         }))
         

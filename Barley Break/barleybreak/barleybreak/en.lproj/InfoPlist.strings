@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  barleybreak
+
+  Created by Dmitry Belyaev on 06/11/2019.
+  Copyright © 2019 Dmitry Belyaev. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Puzzle 15";
+
+"CFBundleName" = "Puzzle 15";

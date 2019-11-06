@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  barleybreak
+
+  Created by Dmitry Belyaev on 06/11/2019.
+  Copyright © 2019 Dmitry Belyaev. All rights reserved.
+*/
+
+"game_title" = "Пятнашки";
+
+"continue_game_dialog_title" = "Продолжить";
+
+"continue_game_dialog_message" = "Хотите продолжить последнюю сохранённую игру?";
+
+"yes" = "Да";
+
+"no" = "Нет";
+
+"game_over_dialog_title" = "Игра окончена";
+
+"game_over_dialog_message1" = "Поздравляем! Вы собрали пятнашки за";
+
+"game_over_dialog_message2" = "ходов. Начать новую игру?";
+
+"best" = "Лучший:";

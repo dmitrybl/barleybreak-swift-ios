@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  barleybreak
+
+  Created by Dmitry Belyaev on 06/11/2019.
+  Copyright © 2019 Dmitry Belyaev. All rights reserved.
+*/
+
+"game_title" = "Puzzle 15";
+
+"continue_game_dialog_title" = "Continue";
+
+"continue_game_dialog_message" = "Do you want to continue the last saved game?";
+
+"yes" = "Yes";
+
+"no" = "No";
+
+"game_over_dialog_title" = "Game Over";
+
+"game_over_dialog_message1" = "Congradulations! You have solved puzzle for";
+
+"game_over_dialog_message2" = "steps. Start new game?";
+
+"best" = "Best:";
+
+
