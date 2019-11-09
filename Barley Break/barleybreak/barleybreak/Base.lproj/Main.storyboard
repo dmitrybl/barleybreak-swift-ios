@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f4a-wy-uHp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f4a-wy-uHp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,7 +110,7 @@
                         <outlet property="playButton" destination="ogj-8n-bTQ" id="txr-Jt-BBh"/>
                         <outlet property="titleLabel" destination="ypN-zm-r9S" id="r3N-Tu-JNA"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="game" id="tub-SV-AdA"/>
-                        <segue destination="3Rp-Su-ydW" kind="show" id="kx7-CF-oxO"/>
+                        <segue destination="3Rp-Su-ydW" kind="show" identifier="choosedesign" id="kx7-CF-oxO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jw-Ay-bG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
