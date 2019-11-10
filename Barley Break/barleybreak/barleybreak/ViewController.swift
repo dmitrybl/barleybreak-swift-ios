@@ -113,8 +113,14 @@ class ViewController: UIViewController {
             bestLabel.text = "\(NSLocalizedString("best", comment: "")) \(highScore)"
         }
         
-        gameFieldView.frame = CGRect(x: 0, y: 0, width: screenWidth * 0.9, height: screenWidth * 0.9)
+        var gameFieldSize = screenWidth * 0.9
         
+        if gameFieldSize > 0.75 * screenHeight {
+            gameFieldSize = screenHeight * 0.5
+        }
+        
+        gameFieldView.frame = CGRect(x: 0, y: 0, width: gameFieldSize, height: gameFieldSize)
+ 
         gameFieldView.center = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
         
         gameFieldSize = gameFieldView.frame.size.width
