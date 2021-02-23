@@ -12,7 +12,7 @@ import GoogleMobileAds
 class ViewController: UIViewController {
     
     var bannerView: GADBannerView!
-    var interstitial: GADInterstitial!
+    var interstitial: GADInterstitialAd?
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var gameFieldView: UIView!
@@ -49,9 +49,19 @@ class ViewController: UIViewController {
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7476185376948341/8148444370")
+        print(GADMobileAds.sharedInstance().sdkVersion)
+        
         let request = GADRequest()
-        interstitial.load(request)
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7476185376948341/8148444370",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
         
         numbersInRow = UserDefaults.standard.integer(forKey: "mode")
         number = numbersInRow * numbersInRow - 1
@@ -392,9 +402,7 @@ class ViewController: UIViewController {
     }
     
     private func newGame() {
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        }
+        interstitial?.present(fromRootViewController: self)
         numSteps = 0
         progress = ""
         resetProgress()

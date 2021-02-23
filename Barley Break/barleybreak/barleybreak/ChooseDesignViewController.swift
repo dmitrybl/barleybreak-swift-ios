@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class ChooseDesignViewController: UIViewController {
     
-    var interstitial: GADInterstitial!
+    var interstitial: GADInterstitialAd?
     
     let dataSource = [
         Design(image: UIImage(named: "design1.png"), name: Utils.designNames[0]),
@@ -32,10 +32,18 @@ class ChooseDesignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7476185376948341/5139137653")
         let request = GADRequest()
-        interstitial.load(request)
+            GADInterstitialAd.load(withAdUnitID: "ca-app-pub-7476185376948341/5139137653",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
+                                                                         
         
         screenWidth = view.frame.size.width
         screenHeight = view.frame.size.height
@@ -173,8 +181,6 @@ extension ChooseDesignViewController : UIPageViewControllerDelegate, UIPageViewC
     }
     
     func showAdvertisement() {
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        }
+       interstitial?.present(fromRootViewController: self)
     }
 }
