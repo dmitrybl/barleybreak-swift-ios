@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-barleybreak/Pods-barleybreak-resources.sh
+${PODS_ROOT}/YandexMobileAds/static/YandexMobileAds.xcframework/MobileAdsBundle.bundle
+${PODS_ROOT}/YandexMobileAds/PrivacyInfo.xcprivacy
+${PODS_ROOT}/YandexMobileAdsInstream/PrivacyInfo.xcprivacy

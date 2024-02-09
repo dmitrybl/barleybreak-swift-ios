@@ -8,11 +8,17 @@
 
 import UIKit
 import GoogleMobileAds
+import YandexMobileAds
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, YMAAdViewDelegate, YMAInterstitialAdLoaderDelegate {
     
-    var bannerView: GADBannerView!
-    var interstitial: GADInterstitialAd?
+    private lazy var interstitialAdLoader: YMAInterstitialAdLoader = {
+            let loader = YMAInterstitialAdLoader()
+            loader.delegate = self
+            return loader
+        }()
+    
+    private var interstitialAd: YMAInterstitialAd?
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var gameFieldView: UIView!
@@ -40,28 +46,32 @@ class ViewController: UIViewController {
     
     private var currentDesign = ""
     
+    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd:
+        YMAInterstitialAd) {
+        self.interstitialAd = interstitialAd
+        let randomNumber = Int.random(in: 1...3)
+        if (randomNumber == 2) {
+            self.interstitialAd?.show(from: self)
+        }
+    }
+
+   func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+            
+   }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let width = view.frame.size.width
+        let adSize = YMABannerAdSize.stickySize(withContainerWidth: width)
+        let adView = YMAAdView(adUnitID: "R-M-5921813-1", adSize: adSize)
+        adView.delegate = self
+        adView.translatesAutoresizingMaskIntoConstraints = false
+        adView.loadAd()
+        adView.displayAtBottom(in: view)
         
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBannerViewToView(bannerView)
-        bannerView.adUnitID = "ca-app-pub-7476185376948341/7928952521"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        
-        print(GADMobileAds.sharedInstance().sdkVersion)
-        
-        let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7476185376948341/8148444370",
-                                        request: request,
-                              completionHandler: { [self] ad, error in
-                                if let error = error {
-                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                  return
-                                }
-                                interstitial = ad
-                              }
-            )
+        let configuration = YMAAdRequestConfiguration(adUnitID: "R-M-5921813-2")
+        interstitialAdLoader.loadAd(with: configuration)
         
         numbersInRow = UserDefaults.standard.integer(forKey: "mode")
         number = numbersInRow * numbersInRow - 1
@@ -402,7 +412,6 @@ class ViewController: UIViewController {
     }
     
     private func newGame() {
-        interstitial?.present(fromRootViewController: self)
         numSteps = 0
         progress = ""
         resetProgress()
@@ -414,6 +423,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: NSLocalizedString("game_over_dialog_title", comment: ""), message: "\(NSLocalizedString("game_over_dialog_message1", comment: "")) \(numSteps) \(NSLocalizedString("game_over_dialog_message2", comment: ""))", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .default, handler: { action in
             self.newGame()
+            self.interstitialAd?.show(from: self)
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("no", comment: ""), style: .cancel, handler: { action in
@@ -421,7 +431,6 @@ class ViewController: UIViewController {
         }))
         
         self.present(alert, animated: true)
-        
     }
     
     private func saveProgress() {
@@ -437,27 +446,5 @@ class ViewController: UIViewController {
         Utils.setProgress(size: size, value: "")
         Utils.setSavedScore(size: size, value: 0)
     }
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-          [NSLayoutConstraint(item: bannerView,
-                              attribute: .bottom,
-                              relatedBy: .equal,
-                              toItem: bottomLayoutGuide,
-                              attribute: .top,
-                              multiplier: 1,
-                              constant: 0),
-           NSLayoutConstraint(item: bannerView,
-                              attribute: .centerX,
-                              relatedBy: .equal,
-                              toItem: view,
-                              attribute: .centerX,
-                              multiplier: 1,
-                              constant: 0)
-          ])
-       }
-    
 }
 

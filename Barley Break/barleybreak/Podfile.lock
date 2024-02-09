@@ -1,4 +1,18 @@
 PODS:
+  - DivKit (28.13.0):
+    - DivKit_LayoutKit (= 28.13.0)
+    - DivKit_Serialization (= 28.13.0)
+    - VGSLCommonCore (~> 2.4)
+    - VGSLNetworking (~> 2.4)
+  - DivKit_LayoutKit (28.13.0):
+    - DivKit_LayoutKitInterface (= 28.13.0)
+    - VGSLCommonCore (~> 2.4)
+  - DivKit_LayoutKitInterface (28.13.0):
+    - VGSLBase (~> 2.4)
+    - VGSLBaseTiny (~> 2.4)
+    - VGSLBaseUI (~> 2.4)
+  - DivKit_Serialization (28.13.0):
+    - VGSLCommonCore (~> 2.4)
   - Google-Mobile-Ads-SDK (8.1.0):
     - GoogleAppMeasurement (~> 7.0)
     - GoogleUserMessagingPlatform (~> 1.1)
@@ -32,27 +46,88 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - VGSL_Fundamentals (2.4.1):
+    - VGSL_Fundamentals_Tiny (= 2.4.1)
+  - VGSL_Fundamentals_Tiny (2.4.1)
+  - VGSLBase (2.4.1):
+    - VGSL_Fundamentals (= 2.4.1)
+    - VGSLBaseTiny (= 2.4.1)
+    - VGSLBaseUI (= 2.4.1)
+  - VGSLBaseTiny (2.4.1):
+    - VGSL_Fundamentals_Tiny (= 2.4.1)
+  - VGSLBaseUI (2.4.1):
+    - VGSLBaseTiny (= 2.4.1)
+  - VGSLCommonCore (2.4.1):
+    - VGSLBase (= 2.4.1)
+  - VGSLNetworking (2.4.1):
+    - VGSLBase (= 2.4.1)
+  - YandexMobileAds (6.3.0):
+    - DivKit (= 28.13.0)
+    - YandexMobileAds/Static (= 6.3.0)
+  - YandexMobileAds/Static (6.3.0):
+    - DivKit (= 28.13.0)
+    - YandexMobileMetrica (< 5.0.0, >= 4.0.0)
+  - YandexMobileAdsInstream (0.23.0):
+    - YandexMobileAds (~> 6.3.0)
+  - YandexMobileMetrica (4.5.2):
+    - YandexMobileMetrica/Static (= 4.5.2)
+  - YandexMobileMetrica/Static (4.5.2):
+    - YandexMobileMetrica/Static/Core (= 4.5.2)
+    - YandexMobileMetrica/Static/Crashes (= 4.5.2)
+  - YandexMobileMetrica/Static/Core (4.5.2)
+  - YandexMobileMetrica/Static/Crashes (4.5.2):
+    - YandexMobileMetrica/Static/Core
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
+  - YandexMobileAds (= 6.3.0)
+  - YandexMobileAdsInstream (= 0.23.0)
 
 SPEC REPOS:
   trunk:
+    - DivKit
+    - DivKit_LayoutKit
+    - DivKit_LayoutKitInterface
+    - DivKit_Serialization
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
     - nanopb
     - PromisesObjC
+    - VGSL_Fundamentals
+    - VGSL_Fundamentals_Tiny
+    - VGSLBase
+    - VGSLBaseTiny
+    - VGSLBaseUI
+    - VGSLCommonCore
+    - VGSLNetworking
+    - YandexMobileAds
+    - YandexMobileAdsInstream
+    - YandexMobileMetrica
 
 SPEC CHECKSUMS:
+  DivKit: 65af423ea03c32b6ecaa63a64d4a2ea26c217f3b
+  DivKit_LayoutKit: 3f88fab9edefb4938b9ccb5359ecbce4e1eeba69
+  DivKit_LayoutKitInterface: 90449756ba956a7fbf3b168c01f7a0b7fc6a9de0
+  DivKit_Serialization: 1b536e30c49163548bb62120320097c8ab41936d
   Google-Mobile-Ads-SDK: efb7fb74595668fbbe680f0d1c06f9a8ff694c7c
   GoogleAppMeasurement: c542a2feaac9ab98fd074e8f1a02c3585bbfbd47
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  VGSL_Fundamentals: 4a965a687c76a5a435d7aaeb6b7182e82408bf4c
+  VGSL_Fundamentals_Tiny: feab274b20c5838fbe09b887db0f6cfa28e26a1c
+  VGSLBase: 37b95dd4ea137f73e8f9a8bd8ec474d8b4d75a68
+  VGSLBaseTiny: 0a0a4992a348184e8580cf73efa8eb373d750f6b
+  VGSLBaseUI: 62f147155e7b7049a32a30ac87b5bd8b83e636c5
+  VGSLCommonCore: dd33088af6633d1c09f0c9bb8027920b99e2e0c8
+  VGSLNetworking: e12d616b447522bf524c689d28f55cfbb20473cd
+  YandexMobileAds: 790d7b35909e9c2ed55d56416026c6459943e358
+  YandexMobileAdsInstream: d45e69b1d5fee3bd8cc569150da2fdc82737423b
+  YandexMobileMetrica: f5368ee93f286c793d73b58da00929babfc897c1
 
-PODFILE CHECKSUM: 7af6d4bc1f2eb98550378b22b65bbe40d070e04b
+PODFILE CHECKSUM: 2c233615697e90b341e596a9f12548e56fabb1fa
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

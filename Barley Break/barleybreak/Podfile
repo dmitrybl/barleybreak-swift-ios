@@ -1,3 +1,5 @@
 target 'barleybreak' do
   pod 'Google-Mobile-Ads-SDK'
+  pod 'YandexMobileAds', '6.3.0'
+  pod 'YandexMobileAdsInstream', '0.23.0'
 end

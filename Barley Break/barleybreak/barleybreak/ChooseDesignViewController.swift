@@ -8,10 +8,17 @@
 
 import UIKit
 import GoogleMobileAds
+import YandexMobileAds
 
-class ChooseDesignViewController: UIViewController {
+class ChooseDesignViewController: UIViewController, YMAInterstitialAdLoaderDelegate {
     
-    var interstitial: GADInterstitialAd?
+    private lazy var interstitialAdLoader: YMAInterstitialAdLoader = {
+            let loader = YMAInterstitialAdLoader()
+            loader.delegate = self
+            return loader
+        }()
+    
+    private var interstitialAd: YMAInterstitialAd?
     
     let dataSource = [
         Design(image: UIImage(named: "design1.png"), name: Utils.designNames[0]),
@@ -30,21 +37,20 @@ class ChooseDesignViewController: UIViewController {
     private var screenWidth: CGFloat = 0
     private var screenHeight: CGFloat = 0
     
+    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd:
+        YMAInterstitialAd) {
+        self.interstitialAd = interstitialAd
+    }
+
+   func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+            
+   }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID: "ca-app-pub-7476185376948341/5139137653",
-                                        request: request,
-                              completionHandler: { [self] ad, error in
-                                if let error = error {
-                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                  return
-                                }
-                                interstitial = ad
-                              }
-            )
+        let configuration = YMAAdRequestConfiguration(adUnitID: "R-M-5921813-2")
+        interstitialAdLoader.loadAd(with: configuration)
                                                                          
-        
         screenWidth = view.frame.size.width
         screenHeight = view.frame.size.height
 
@@ -181,6 +187,6 @@ extension ChooseDesignViewController : UIPageViewControllerDelegate, UIPageViewC
     }
     
     func showAdvertisement() {
-       interstitial?.present(fromRootViewController: self)
+        interstitialAd?.show(from: self)
     }
 }

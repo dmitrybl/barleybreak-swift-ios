@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import GoogleMobileAds
+import YandexMobileAds
 
-class MainViewController: UIViewController {
-    
-    var bannerView: GADBannerView!
+class MainViewController: UIViewController, YMAAdViewDelegate {
 
     @IBOutlet weak var modePanel: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,11 +25,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBannerViewToView(bannerView)
-        bannerView.adUnitID = "ca-app-pub-7476185376948341/5328562115"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        let width = view.frame.size.width
+        let adSize = YMABannerAdSize.stickySize(withContainerWidth: width)
+        let adView = YMAAdView(adUnitID: "R-M-5921813-1", adSize: adSize)
+        adView.delegate = self
+        adView.translatesAutoresizingMaskIntoConstraints = false
+        adView.loadAd()
+        adView.displayAtBottom(in: view)
         
         if !Utils.UserDefaultsExists() {
             Utils.initializeUserDefault()
@@ -144,27 +144,4 @@ class MainViewController: UIViewController {
        let chooseDesignVC = self.storyboard?.instantiateViewController(withIdentifier: "ChooseDesignViewController")
        self.navigationController?.pushViewController(chooseDesignVC!, animated: true)
     }
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-     bannerView.translatesAutoresizingMaskIntoConstraints = false
-     view.addSubview(bannerView)
-     view.addConstraints(
-       [NSLayoutConstraint(item: bannerView,
-                           attribute: .bottom,
-                           relatedBy: .equal,
-                           toItem: bottomLayoutGuide,
-                           attribute: .top,
-                           multiplier: 1,
-                           constant: 0),
-        NSLayoutConstraint(item: bannerView,
-                           attribute: .centerX,
-                           relatedBy: .equal,
-                           toItem: view,
-                           attribute: .centerX,
-                           multiplier: 1,
-                           constant: 0)
-       ])
-    }
-    
-
 }
