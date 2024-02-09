@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import YandexMobileAds
 
 class ChooseDesignViewController: UIViewController, YMAInterstitialAdLoaderDelegate {
